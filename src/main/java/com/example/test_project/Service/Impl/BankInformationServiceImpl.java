@@ -22,7 +22,6 @@ private final BankInformationRepository bankInformationRepository;
     }
     @Override
     public List<BankInformation> getAllBankInformation(){
-
         return  bankInformationRepository.findAll();
     }
     @Override

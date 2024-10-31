@@ -3,11 +3,13 @@ package com.example.test_project.Test;
 import com.example.test_project.Controller.UserController;
 import com.example.test_project.Model.User;
 import com.example.test_project.Service.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
@@ -43,7 +45,8 @@ class UserControllerTest {
         doNothing().when(userService).saveUser(any(User.class));
 
         mockMvc.perform(post("/save/users")
-                        .flashAttr("user", user))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(user)))
                 .andExpect(status().isOk());
 
         verify(userService, times(1)).saveUser(any(User.class));
@@ -57,20 +60,25 @@ class UserControllerTest {
 
         mockMvc.perform(get("/users"))
                 .andExpect(status().isOk())
-                .andExpect(model().attributeExists("usersList"))
-                .andExpect(view().name("userList"));  // Checks the view name
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON)) // Check for JSON response
+                .andExpect(jsonPath("$[0].firstName").value("John")) // Verify the content of the JSON
+                .andExpect(jsonPath("$[0].lastName").value("Doe"));  // Additional checks can be added here
     }
+
+
 
     @Test
     void testUpdateUser() throws Exception {
         doNothing().when(userService).updateUser(any(User.class), eq(1L));
 
         mockMvc.perform(put("/update/users/1")
-                        .flashAttr("user", user))
+                        .contentType(MediaType.APPLICATION_JSON) // Set content type to JSON
+                        .content("{\"firstName\":\"Jane\", \"lastName\":\"Doe\", \"email\":\"jane.doe@example.com\", \"phoneNumber\":\"0987654321\"}")) // JSON content
                 .andExpect(status().isOk());
 
         verify(userService, times(1)).updateUser(any(User.class), eq(1L));
     }
+
 
     @Test
     void testDeleteUser() throws Exception {

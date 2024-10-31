@@ -5,6 +5,7 @@ import com.example.test_project.Service.BankInformationService;
 import com.example.test_project.Service.EncryptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class BankInformationController {
     }
 
     @PostMapping("/save/BankInformation")
-    public String saveBankInformation(@ModelAttribute BankInformation bankInformation) {
+    public String saveBankInformation(@RequestBody BankInformation bankInformation) {
         try {
             String encryptedAccountNumber = EncryptionUtils.encrypt(bankInformation.getBankAccountNumber(), encryptionKey);
             bankInformation.setBankAccountNumber(encryptedAccountNumber);
@@ -35,6 +36,7 @@ public class BankInformationController {
             return "Error saving bank information";
         }
     }
+
 
     @GetMapping("/bankInformation")
     public void getBankInformation(Model model) {
@@ -53,7 +55,7 @@ public class BankInformationController {
     }
 
     @PutMapping("/update/BankInformation/{id}")
-    public String updateBankInformation(@PathVariable long id, @ModelAttribute BankInformation bankInformation) {
+    public String updateBankInformation(@PathVariable long id, @RequestBody BankInformation bankInformation) {
         try {
             String encryptedAccountNumber = EncryptionUtils.encrypt(bankInformation.getBankAccountNumber(), encryptionKey);
             bankInformation.setBankAccountNumber(encryptedAccountNumber);
