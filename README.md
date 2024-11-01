@@ -23,7 +23,6 @@ Make sure you have the following installed on your local machine:
 
 
 ## Setup Instructions
-1. Clone the repository:
 
 ### Setup Project Locally
 1. Clone the repository:
@@ -57,18 +56,47 @@ Make sure you have the following installed on your local machine:
    spring.datasource.username=root
    spring.datasource.password=
    spring.datasource.driver-class-name=org.postgresql.Driver
-
-         
+        
 ### How to Run the Project Locally
 
-3. Set up the environment variables for encryption:
-4. 
-   
-- **Create a .env file in the root directory and add the following line**:
-  ```bash
-  ENCRYPTION_KEY=16TestProjectKey.
-
-4. Run the application:
+1. Start the application:
    ```bash
    mvn spring-boot:run
-5. The application should now be running on http://localhost:8080.
+
+2. Access the API on http://localhost:8080.
+
+## Sample API Requests for Testing CRUD Operations
+
+### Create a New User
+- **Endpoint**: `/save/users`
+- **Method**: `POST`
+- **Content-Type**: `application/json`
+- **Request Body**:
+   ```json
+   {
+       "firstName": "Gamachis",
+       "lastName": "awoke",
+       "email": "gamachis@example.com",
+       "phoneNumber": "0934567890"
+   }
+### Retrieve All Users
+- **Endpoint**: `/users`
+- **Method**: `GET`
+- **Response**:
+   ```json
+   [
+   {
+       "id": "some-uuid",
+       "firstName": "Gamachis",
+       "lastName": "Doe",
+       "email": "gamachis@example.com",
+       "phoneNumber": "0934567890"
+   },
+    {
+       "id": "some-uuid",
+       "firstName": "gamachis",
+       "lastName": "awoke",
+       "email": "gamachis@example.com",
+       "phoneNumber": "0934567890"
+   }
+   ]
