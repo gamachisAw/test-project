@@ -79,6 +79,7 @@ Make sure you have the following installed on your local machine:
        "email": "gamachis@example.com",
        "phoneNumber": "0934567890"
    }
+- **Response**:`An empty response with a 200 OK status if successful.` 
 ### Retrieve All Users
 - **Endpoint**: `/users`
 - **Method**: `GET`
