@@ -101,3 +101,22 @@ Make sure you have the following installed on your local machine:
        "phoneNumber": "0934567890"
    }
    ]
+### Update an Existing User
+- **Endpoint**: `/update/users/{id}`
+- **Method**: `PUT`
+- **Content-Type**: `application/json`
+- **Request Body**:
+   ```json
+   {
+       "firstName": "Gamachis",
+       "lastName": "awoke",
+       "email": "gamachis@example.com",
+       "phoneNumber": "0934567890"
+   }
+- **Response**:`An empty response with a 200 OK status if successful.`
+  
+### Delete a User
+- **Endpoint**: `/delete/users/{id}`
+- **Method**: `DELETE`
+- **Response**:`An empty response with a 200 OK status if successful.`
+- Replace {id} with the unique identifier of the user you want to update or delete.
