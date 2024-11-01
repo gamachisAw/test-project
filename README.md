@@ -126,11 +126,11 @@ Make sure you have the following installed on your local machine:
 1. In your terminal, set the encryption key:
    ```bash
    set ENCRYPTION_KEY=16TestProjectKey
-  -Make sure the key length matches the requirements in the project’s encryption configuration.
+  Make sure the key length matches the requirements in the project’s encryption configuration.
 
 ## API Documentation with Swagger
 
--Swagger UI provides a convenient way to interact with and test the APIs. To enable Swagger:
+Swagger UI provides a convenient way to interact with and test the APIs. To enable Swagger:
 1. Add the following dependency to your pom.xml:
     ```bash
     <dependency>
@@ -141,6 +141,6 @@ Make sure you have the following installed on your local machine:
 2. After starting the application, access Swagger UI at:
     ```bash
      http://localhost:8080/swagger-ui.html
--Swagger UI will list all available endpoints and allow you to test CRUD operations directly.
+Swagger UI will list all available endpoints and allow you to test CRUD operations directly.
 
     
