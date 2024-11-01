@@ -2,13 +2,15 @@
 
 A Spring Boot application with CRUD functionalities and CockroachDB integration. This project also includes environment-based encryption and API documentation using Swagger.
 
-## Objectives of Phase 1 (MVP Development)
+## Table of Contents
 
-- **Event Creation and Management**: Create, edit, and manage events.
-- **Ticketing System**: Both free and paid event ticketing with QR-coded e-tickets.
-- **Payment Integration**: Secure payment processing for ticket sales.
-- **RSVP Tracking**: Real-time RSVP management for event organizers.
-- **User Authentication**: Secure registration and roles-based access.
+- **Prerequisites**
+- **Setting Up the Project Locally**
+- **Configuring CockroachDB**
+- **Running the Project Locally**
+- **API Testing with Sample Requests**
+- **Environment Variables Configuration**
+- **API Documentation with Swagger**
 
 ## Frontend Development Stack
 
