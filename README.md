@@ -1,16 +1,17 @@
 # TEST-PROJECT 
 
-A Spring Boot application with CRUD functionalities and CockroachDB integration. This project also includes environment-based encryption and API documentation using Swagger.
-
 ## Table of Contents
 - [Introduction](#introduction)
-- **Prerequisites**
-- **Setting Up the Project Locally**
-- **Configuring CockroachDB**
-- **Running the Project Locally**
-- **API Testing with Sample Requests**
-- **Environment Variables Configuration**
-- **API Documentation with Swagger**
+- [Prerequisites](#prerequisites)
+- [Setup Instructions](#setup-instructions)
+  - [How to Run the Project Locally](#how-to-run-the-project-locally)
+  - [How to Set Up CockroachDB](#how-to-set-up-cockroachdb)
+- [Sample API Requests for Testing CRUD Operations](#sample-api-requests-for-testing-crud-operations)
+- [Configuring Environment Variables for Encryption](#configuring-environment-variables-for-encryption)
+- [License](#license)
+
+## Introduction
+A Spring Boot application with CRUD functionalities and CockroachDB integration. This project also includes environment-based encryption and API documentation using Swagger.
 
 ## Prerequisites
 Make sure you have the following installed on your local machine:
