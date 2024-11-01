@@ -4,8 +4,8 @@ A Spring Boot application with CRUD functionalities and CockroachDB integration.
 
 ## Table of Contents
 
-- **Prerequisites**
-- **Setting Up the Project Locally**
+1 **Prerequisites**
+2 **Setting Up the Project Locally**
 - **Configuring CockroachDB**
 - **Running the Project Locally**
 - **API Testing with Sample Requests**
