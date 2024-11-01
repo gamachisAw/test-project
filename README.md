@@ -3,8 +3,8 @@
 A Spring Boot application with CRUD functionalities and CockroachDB integration. This project also includes environment-based encryption and API documentation using Swagger.
 
 ## Table of Contents
-
-- 1 Prerequisites.
+- [Introduction](#introduction)
+- **Prerequisites**
 - **Setting Up the Project Locally**
 - **Configuring CockroachDB**
 - **Running the Project Locally**
@@ -12,25 +12,13 @@ A Spring Boot application with CRUD functionalities and CockroachDB integration.
 - **Environment Variables Configuration**
 - **API Documentation with Swagger**
 
-## Frontend Development Stack
+## Prerequisites
+Make sure you have the following installed on your local machine:
+- Java 21
+- Maven
+- CockroachDB
+- IDE (e.g., IntelliJ IDEA, Eclipse)
 
-- **Next.js & React.js**: For building fast, server-rendered web applications.
-- **Material UI (MUI)**: UI library for consistent design across the platform.
-- **Tailwind CSS**: Utility-first CSS framework for custom UI development.
-- **Axios**: For handling API requests efficiently.
-- **Redux or Context API**: For managing state across the application.
-- **React Router**: For seamless navigation across event pages, dashboards, and ticketing system.
-
-## Backend Development Stack
-
-- **Spring Boot**: Backend framework for handling event-related APIs, authentication, and secure payment gateways.
-- **Spring Security**: For user authentication and roles-based access.
-- **JWT Authentication**: Secure user sessions and access control.
-- **PostgreSQL**: Primary database for structured data storage, including event details, tickets, RSVPs, and user data.
-- **Redis or Firebase**: For real-time data syncing, especially for RSVP tracking.
-- **OAuth 2.0**: Secure third-party authentication.
-
-## Core Features (MVP)
 
 ### 1. Event Creation & Management
 - **Functionality**: Create, edit, and delete events with details such as name, description, location, date/time, and ticket information.
