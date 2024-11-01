@@ -120,3 +120,10 @@ Make sure you have the following installed on your local machine:
 - **Method**: `DELETE`
 - **Response**:`An empty response with a 200 OK status if successful.`
 - Replace {id} with the unique identifier of the user you want to update or delete.
+
+## Environment Variables Configuration
+-For encryption, you need to configure an environment variable:
+1. In your terminal, set the encryption key:
+   ```bash
+   set ENCRYPTION_KEY=16TestProjectKey
+  -Make sure the key length matches the requirements in the project’s encryption configuration.
