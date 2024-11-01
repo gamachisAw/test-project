@@ -35,3 +35,10 @@ Make sure you have the following installed on your local machine:
 
 3. Set up the environment variables for encryption:
 - **Create a .env file in the root directory and add the following line**:
+  ```bash
+  ENCRYPTION_KEY=16TestProjectKey12345.
+
+4. Run the application:
+   ```bash
+   mvn spring-boot:run
+5. The application should now be running on http://localhost:8080.
