@@ -38,7 +38,6 @@ public class BankInformationController {
         }
     }
 
-
     @GetMapping("/bankInformation")
      public List<BankInformation> getBankInformation( ) {
         try {
