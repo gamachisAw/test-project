@@ -26,7 +26,7 @@ public class BankInformationController {
         this.bankInformationService = bankInformationService;
     }
 
-    @PostMapping("/save/BankInformation")
+    @PostMapping("/save/bankInformation")
     public String saveBankInformation(@RequestBody BankInformation bankInformation) {
         try {
             String encryptedAccountNumber = EncryptionUtils.encrypt(bankInformation.getBankAccountNumber(), encryptionKey);
@@ -52,7 +52,7 @@ public class BankInformationController {
         }
     }
 
-    @PutMapping("/update/BankInformation/{id}")
+    @PutMapping("/update/bankInformation/{id}")
     public String updateBankInformation(@PathVariable long id, @RequestBody BankInformation bankInformation) {
         try {
             String encryptedAccountNumber = EncryptionUtils.encrypt(bankInformation.getBankAccountNumber(), encryptionKey);
@@ -64,7 +64,7 @@ public class BankInformationController {
         }
     }
 
-    @DeleteMapping("delete/BankInformation/{id}")
+    @DeleteMapping("delete/bankInformation/{id}")
     public String deleteBankInformation(@PathVariable long id) {
         bankInformationService.deleteBankInformation(id);
         return "Bank information deleted successfully";
