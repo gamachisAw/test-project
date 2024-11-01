@@ -21,7 +21,7 @@ public class UserController {
     @PostMapping("/save/users")
     public String setUser(@RequestBody User user) {
         userService.saveUser(user);
-        return "";
+        return "user is saved";
     }
 
     @GetMapping("/users")
@@ -32,7 +32,7 @@ public class UserController {
     @PutMapping("/update/users/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
         userService.updateUser(user, id);
-        return "";
+        return "user is updated";
     }
 
     @DeleteMapping("delete/users/{id}")

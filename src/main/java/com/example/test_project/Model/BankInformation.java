@@ -11,16 +11,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Bank_information")
+@Table(name = "bank_information")
 public class BankInformation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User userID;
-    private  String bankAccountNumber;
+    private String bankAccountNumber;
     private String bankName;
-    private  String accountType;
-
+    private String accountType;
 }

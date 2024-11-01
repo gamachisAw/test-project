@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -39,18 +40,16 @@ public class BankInformationController {
 
 
     @GetMapping("/bankInformation")
-    public void getBankInformation(Model model) {
+     public List<BankInformation> getBankInformation( ) {
         try {
             List<BankInformation> getAllBankInformation = bankInformationService.getAllBankInformation();
-
             for (BankInformation bankInformation : getAllBankInformation) {
                 String decryptedAccountNumber = EncryptionUtils.decrypt(bankInformation.getBankAccountNumber(), encryptionKey);
                 bankInformation.setBankAccountNumber(decryptedAccountNumber);
             }
-
-            model.addAttribute("ListOfBankInformation", getAllBankInformation);
-        } catch (Exception e) {
-            model.addAttribute("error", "Error retrieving bank information: " + e.getMessage());
+            return getAllBankInformation;
+         } catch (Exception e) {
+            return Collections.emptyList();
         }
     }
 
