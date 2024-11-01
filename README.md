@@ -30,7 +30,8 @@ Make sure you have the following installed on your local machine:
    cd test-project
 
 2. Clone the repository:
-  mvn clean install
+    ```bash
+   mvn clean install
 
-3.Set up the environment variables for encryption:
- **Create a .env file in the root directory and add the following line**:
+3. Set up the environment variables for encryption:
+- **Create a .env file in the root directory and add the following line**:
