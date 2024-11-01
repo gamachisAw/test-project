@@ -26,5 +26,11 @@ Make sure you have the following installed on your local machine:
 ### How to Run the Project Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/bank-information-management-system.git
-   cd bank-information-management-system
+   git clone https://github.com/gemmme/test-project.git
+   cd test-project
+
+2. Clone the repository:
+  mvn clean install
+
+3.Set up the environment variables for encryption:
+ **Create a .env file in the root directory and add the following line**:
