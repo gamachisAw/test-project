@@ -9,7 +9,7 @@
   - [How to Run the Project Locally](#how-to-run-the-project-locally)
 - [Sample API Requests for Testing CRUD Operations](#sample-api-requests-for-testing-crud-operations)
 - [Configuring Environment Variables for Encryption](#configuring-environment-variables-for-encryption)
-- [License](#license)
+
 
 ## Introduction
 This is a Spring Boot application with CRUD functionalities and CockroachDB integration. This project also includes environment-based encryption and API documentation using Swagger.
@@ -121,9 +121,26 @@ Make sure you have the following installed on your local machine:
 - **Response**:`An empty response with a 200 OK status if successful.`
 - Replace {id} with the unique identifier of the user you want to update or delete.
 
-## Environment Variables Configuration
+## Configuring Environment Variables for Encryption
 -For encryption, you need to configure an environment variable:
 1. In your terminal, set the encryption key:
    ```bash
    set ENCRYPTION_KEY=16TestProjectKey
   -Make sure the key length matches the requirements in the project’s encryption configuration.
+
+## API Documentation with Swagger
+
+-Swagger UI provides a convenient way to interact with and test the APIs. To enable Swagger:
+1. Add the following dependency to your pom.xml:
+    ```bash
+    <dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.0.2</version>
+    </dependency>
+2. After starting the application, access Swagger UI at:
+    ```bash
+     http://localhost:8080/swagger-ui.html
+-Swagger UI will list all available endpoints and allow you to test CRUD operations directly.
+
+    
